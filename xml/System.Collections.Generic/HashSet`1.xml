@@ -1627,10 +1627,9 @@
 ## Remarks  
  All collections, including the empty set, are supersets of the empty set. Therefore, this method returns `true` if the collection represented by the `other` parameter is empty, even if the current <xref:System.Collections.Generic.HashSet%601> object is empty.  
   
- This method always returns `false` if <xref:System.Collections.Generic.HashSet%601.Count%2A> is less than the number of elements in `other`.  
+ If the collection represented by `other` is a <xref:System.Collections.Generic.HashSet%601> collection with the same equality comparer as the current <xref:System.Collections.Generic.HashSet%601> object and <xref:System.Collections.Generic.HashSet%601.Count%2A> is less than the number of elements in `other`, this method always returns `false`.
   
- If the collection represented by `other` is a <xref:System.Collections.Generic.HashSet%601> collection with the same equality comparer as the current <xref:System.Collections.Generic.HashSet%601> object, this method is an O(`n`) operation. Otherwise, this method is an O(`n` + `m`) operation, where `n` is the number of elements in `other` and `m` is <xref:System.Collections.Generic.HashSet%601.Count%2A>.  
-  
+ This method is an O(`n`) operation, where `n` is the number of elements in `other`.
    
   
 ## Examples  
